@@ -1,5 +1,6 @@
 
 const mogoose = require('mongoose');
+require('./Product')
 
 const OrderSchema = new mongoose.Schema(
     {
@@ -18,6 +19,9 @@ const OrderSchema = new mongoose.Schema(
                 },
             }
         ],
+        orderNumber:{
+            type: Number,
+          },
         amount: {
             type: Number,
             required: true
@@ -29,7 +33,7 @@ const OrderSchema = new mongoose.Schema(
         status: {
             type: String,
             required: true,
-            default: "novo"
+            default: "new"
         }
     },
     {timestamp: true }
